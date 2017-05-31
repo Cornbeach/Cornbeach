@@ -1,0 +1,64 @@
+# Project: Project
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o remove.o add.o show.o show1.o input.o correctnum.o correct.o backup.o del.o search.o sort.o takereturn.o
+LINKOBJ  = main.o remove.o add.o show.o show1.o input.o correctnum.o correct.o backup.o del.o search.o sort.o takereturn.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = main.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+remove.o: remove.cpp
+	$(CPP) -c remove.cpp -o remove.o $(CXXFLAGS)
+
+add.o: add.cpp
+	$(CPP) -c add.cpp -o add.o $(CXXFLAGS)
+
+show.o: show.cpp
+	$(CPP) -c show.cpp -o show.o $(CXXFLAGS)
+
+show1.o: show1.cpp
+	$(CPP) -c show1.cpp -o show1.o $(CXXFLAGS)
+
+input.o: input.cpp
+	$(CPP) -c input.cpp -o input.o $(CXXFLAGS)
+
+correctnum.o: correctnum.cpp
+	$(CPP) -c correctnum.cpp -o correctnum.o $(CXXFLAGS)
+
+correct.o: correct.cpp
+	$(CPP) -c correct.cpp -o correct.o $(CXXFLAGS)
+
+backup.o: backup.cpp
+	$(CPP) -c backup.cpp -o backup.o $(CXXFLAGS)
+
+del.o: del.cpp
+	$(CPP) -c del.cpp -o del.o $(CXXFLAGS)
+
+search.o: search.cpp
+	$(CPP) -c search.cpp -o search.o $(CXXFLAGS)
+
+sort.o: sort.cpp
+	$(CPP) -c sort.cpp -o sort.o $(CXXFLAGS)
+
+takereturn.o: takereturn.cpp
+	$(CPP) -c takereturn.cpp -o takereturn.o $(CXXFLAGS)
